@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by Nilesh Verma on 8/22/2015. $$$$ this activity is for generating the hash key
+ * // cahnge the name in application in manifest
  */
 public class MyHashKey extends Application {
 
@@ -26,7 +27,7 @@ public class MyHashKey extends Application {
         // Add code to print out the key hash
         try {
             PackageInfo info = getPackageManager().getPackageInfo(
-                    "com.itshiteshverma.fbloginapp",  //$$$$  $$$$  //  enter your Package name
+                    "randomz.com.notset",  //$$$$  $$$$  //  enter your Package name
                     PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) { //only import this package import android.content.pm.Signature;
                 MessageDigest md = MessageDigest.getInstance("SHA");

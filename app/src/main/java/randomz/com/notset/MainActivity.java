@@ -1,6 +1,7 @@
 package randomz.com.notset;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v4.app.NavUtils;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -63,23 +64,29 @@ public class MainActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBhelper helper = new DBhelper(getApplicationContext());
 
-                String s = is.InfoSpinner();
-                String msg = (helper.saveData(Double.parseDouble(txtAmount.getText().toString()), s));
-                Toast.makeText(MainActivity.this, "Item db" + s, Toast.LENGTH_SHORT).show();
+                if (txtAmount.getText().length() > 0) {
+                    DBhelper helper = new DBhelper(getApplicationContext());
 
-                Toast.makeText(getApplication(), msg, Toast.LENGTH_LONG).show();
+                    String s = is.InfoSpinner();
+                    String msg = (helper.saveData(Double.parseDouble(txtAmount.getText().toString()), s));
 
-                // This will hide the Keybord when the Button is pressed
-                InputMethodManager inputManager = (InputMethodManager)
-                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                    Toast.makeText(getApplication(), msg, Toast.LENGTH_LONG).show();
 
-                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                        InputMethodManager.HIDE_NOT_ALWAYS);
+                    // This will hide the Keybord when the Button is pressed
+                    InputMethodManager inputManager = (InputMethodManager)
+                            getSystemService(Context.INPUT_METHOD_SERVICE);
 
-                //this will close this activity
-                finish();
+                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                            InputMethodManager.HIDE_NOT_ALWAYS);
+
+                    //this will close this activity
+                    finish();
+                }
+                else {
+                    Toast.makeText(MainActivity.this,"Please Enter a Value :)" ,Toast.LENGTH_SHORT).show();
+                    txtAmount.setBackgroundColor(Color.RED);
+                }
             }
         });
     }

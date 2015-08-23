@@ -251,7 +251,7 @@ public class NavigationDrawerFragment extends Fragment {
 
     private void DisplayWelcomeMessage(Profile profile) {
         if (profile != null) {
-            name.setText("Welcome: " + profile.getName());
+            name.setText( profile.getName());
             profileImage.setProfileId(profile.getId());
         }
     }
