@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">notset</string>
+    <string name="title_activity_main">Main Activity</string>
+    <string name="title_activity_detaisl">Details</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="facebook_app_id">1650965841849830</string>
+
+    <string-array name="categories">
+        <item>Food And Drinks</item>
+        <item>Health</item>
+        <item>Travel</item>
+        <item>Leisure</item>
+        <item>Misc</item>
+    </string-array>
+</resources>
